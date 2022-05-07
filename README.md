@@ -2,7 +2,7 @@
 
 Arduino mini, Nidec 24H motors, MPU6050, 3S 500 mAh LiPo battery.
 
-Balancing controller can be tunning remotely over bluetooth.
+Balancing controller can be tuned remotely over bluetooth.
 
 Example (change K1):
 
