@@ -1,5 +1,4 @@
 #include <Wire.h>
-#include <PWM.h> 
 
 #define MPU6050       0x68         // Device address
 #define ACCEL_CONFIG  0x1C         // Accelerometer configuration address
@@ -89,13 +88,12 @@ void loop() {
 
       Motor_control(pwm_s);
       motor_speed += pwm_s;
-      
-      previousT_1 = currentT;
     } else {
       Motor_control(0);
       digitalWrite(BRAKE, LOW);
       motor_speed = 0;
     }
+    previousT_1 = currentT;
   }
   if (currentT - previousT_2 >= 500) {
     battVoltage((double)analogRead(VBAT) / 53.7);  // This is then connected to a 47k-12k voltage divider
